@@ -39,6 +39,3 @@ fn read_save(w: &[u8]) -> Result<WriteData> {
     
     header2.into_write_data() // <3
 }
-
-fn main() {
-}
