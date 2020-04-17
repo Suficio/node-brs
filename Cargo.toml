@@ -10,12 +10,9 @@ categories = ["encoding"]
 license = "MIT"
 
 [dependencies]
-byteorder = "1"
-# libflate = "0.1" # Would not decode when built in WebAssembly
-uuid = { version = "0.7", features = ["v5", "serde"] }
+brs = "0.1.0"
 chrono = { version = "0.4", features = ["serde"] }
-num_enum = "0.2.0"
+uuid = { version = "0.7", features = ["v5", "serde"] }
 
 serde = { version = "^1.0", features = ["derive"] }
 wasm-bindgen = {version = "^0.2", features = ["serde-serialize"]}
-flate2 = "1.0.14"
