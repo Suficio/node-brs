@@ -10,9 +10,5 @@ categories = ["encoding"]
 license = "MIT"
 
 [dependencies]
-brs = "0.1.0"
-chrono = { version = "0.4", features = ["serde"] }
-uuid = { version = "0.7", features = ["v5", "serde"] }
-
-serde = { version = "^1.0", features = ["derive"] }
+brs = { git = "https://github.com/CheezBarger/brs" }
 wasm-bindgen = {version = "^0.2", features = ["serde-serialize"]}
