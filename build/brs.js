@@ -162,32 +162,12 @@ module.exports.write_save_from_js = function(w) {
 };
 
 /**
-* @param {any} w
-* @param {any} f
-* @returns {any}
-*/
-module.exports.write_save_from_js_to_file = function(w, f) {
-    var ret = wasm.write_save_from_js_to_file(addHeapObject(w), addHeapObject(f));
-    return takeObject(ret);
-};
-
-/**
 * Read a save file from js call.
 * @param {any} w
 * @returns {any}
 */
 module.exports.read_save_from_js = function(w) {
     var ret = wasm.read_save_from_js(addHeapObject(w));
-    return takeObject(ret);
-};
-
-/**
-* Read a save file from file.
-* @param {any} f
-* @returns {any}
-*/
-module.exports.read_save_from_js_from_file = function(f) {
-    var ret = wasm.read_save_from_js_from_file(addHeapObject(f));
     return takeObject(ret);
 };
 

@@ -1,6 +1,6 @@
 {
   "name": "node-brs",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Read and write Brickadia saves using node.js and WebAssembly.",
   "main": "index.js",
   "scripts": {
