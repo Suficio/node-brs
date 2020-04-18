@@ -9,6 +9,10 @@ keywords = ["brickadia", "parser", "file", "binary", "node", "javascript"]
 categories = ["encoding"]
 license = "MIT"
 
+[lib]
+crate-type = ["cdylib"]
+
 [dependencies]
 brs = { git = "https://github.com/CheezBarger/brs" }
-wasm-bindgen = {version = "^0.2", features = ["serde-serialize"]}
+wasm-bindgen = "0.2"
+serde-wasm-bindgen = "0.1.3"

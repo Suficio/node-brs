@@ -171,8 +171,7 @@ class WriteData
  */
 function writeSave(filename, writeData)
 {
-    const rawData = Buffer.from(brs.write_save_from_js(writeData || new WriteData()));
-    fs.writeFileSync(filename, rawData);
+    return brs.write_save_from_js_to_file(writeData || new WriteData(), filename);
 };
 
 /**
@@ -182,9 +181,21 @@ function writeSave(filename, writeData)
  */
 function readSave(filename)
 {
-    const rawData = fs.readFileSync(filename);
-    const data = brs.read_save_from_js([...rawData]); // Nothing else worked
+    const data = brs.read_save_from_js_from_file(filename);
+    return parseData(data);
+}
 
+/**
+ * Read save file from buffer
+ * @param {Buffer} buffer - Buffer with file data
+ * @return {WriteData}
+ */
+function readSaveBuffer(buffer) {
+    const data = brs.read_save_from_js([...buffer]); // Nothing else worked
+    return parseData(data);
+}
+
+function parseData(data) {
     data.colors = data.colors.map(function(e)
     {
         return new Color(e);
@@ -242,4 +253,5 @@ module.exports = {
 
     writeSave: writeSave,
     readSave: readSave,
+    readSaveBuffer: readSaveBuffer
 };
